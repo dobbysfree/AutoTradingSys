@@ -22,7 +22,7 @@ namespace LSApi
                 return;
             }
 
-            bool isLogin = EAPI.Login(App.IConf["Ebest:ID"], App.IConf["Ebest:PW"], App.IConf["Ebest:Cert"], 0, false);
+            bool isLogin = EAPI.Login(App.IConf["LS:ID"], App.IConf["LS:PW"], App.IConf["LS:Cert"], 0, false);
             if (!isLogin)
             {
                 Program.ILog.Warning("Failed login");
