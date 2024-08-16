@@ -10,13 +10,13 @@ namespace LSApi.TR
         public static void ReqDeposit()
         {
             cspaq12200 = new XAQueryClass();
-            cspaq12200.ResFileName = App.IConf["Ebest:Res"] + "CSPAQ12200.res";
+            cspaq12200.ResFileName = App.IConf["LS:Res"] + "CSPAQ12200.res";
             cspaq12200.ReceiveData += RcvCSPAQ12200;
 
             cspaq12200.SetFieldData("CSPAQ12200InBlock1", "RecCnt", 0, "1");
             cspaq12200.SetFieldData("CSPAQ12200InBlock1", "MgmtBrnNo", 0, "");
-            cspaq12200.SetFieldData("CSPAQ12200InBlock1", "AcntNo", 0, App.IConf["Ebest:Acnt"]);
-            cspaq12200.SetFieldData("CSPAQ12200InBlock1", "Pwd", 0, App.IConf["Ebest:AcntPW"]);
+            cspaq12200.SetFieldData("CSPAQ12200InBlock1", "AcntNo", 0, App.IConf["LS:Acnt"]);
+            cspaq12200.SetFieldData("CSPAQ12200InBlock1", "Pwd", 0, App.IConf["LS:AcntPW"]);
             cspaq12200.SetFieldData("CSPAQ12200InBlock1", "BalCreTp", 0, "0");
 
             var result = cspaq12200.Request(false);
@@ -52,11 +52,11 @@ namespace LSApi.TR
         public static void ReqBalanceStocks()
         {
             t0424 = new XAQueryClass();
-            t0424.ResFileName = App.IConf["Ebest:Res"] + "t0424.res";
+            t0424.ResFileName = App.IConf["LS:Res"] + "t0424.res";
             t0424.ReceiveData += RcvT0424;
 
-            t0424.SetFieldData("t0424InBlock", "accno", 0, App.IConf["Ebest:Acnt"]);
-            t0424.SetFieldData("t0424InBlock", "passwd", 0, App.IConf["Ebest:AcntPW"]);
+            t0424.SetFieldData("t0424InBlock", "accno", 0, App.IConf["LS:Acnt"]);
+            t0424.SetFieldData("t0424InBlock", "passwd", 0, App.IConf["LS:AcntPW"]);
             t0424.SetFieldData("t0424InBlock", "prcgb", 0, "1");        // 1:Average price
             t0424.SetFieldData("t0424InBlock", "chegb", 0, "2");        // 2:Based on execution
             t0424.SetFieldData("t0424InBlock", "dangb", 0, "0");        // 0:Regular trading hours, 1:After-hours single price
