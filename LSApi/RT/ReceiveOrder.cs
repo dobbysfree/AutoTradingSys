@@ -30,7 +30,7 @@ namespace LSApi.RT
                 long ord_qty    = long.Parse(xa.GetFieldData("OutBlock", "ordqty"));       // Order Quantity
                 string bs       = xa.GetFieldData("OutBlock", "bnstp");                    // 1:ASK, 2:BID
                 string orgordno = xa.GetFieldData("OutBlock", "orgordno");                 // Original Order NO
-                string name     = xa.GetFieldData("OutBlock", "hname");                    // Stock Ticker
+                string name     = xa.GetFieldData("OutBlock", "hname");                    // Stock Name
                 long ord_prc    = long.Parse(xa.GetFieldData("OutBlock", "ordprice"));     // Order Price
 
                 StringBuilder sb = new StringBuilder();
